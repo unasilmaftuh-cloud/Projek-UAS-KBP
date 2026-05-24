@@ -81,7 +81,7 @@ class User {
         $user = $db->escape($username);
         $pass = md5($password); // Enkripsi MD5 sesuai database lama
 
-        $query  = "SELECT FROM kasir WHERE username = '$user' AND password = '$pass'";
+        $query  = "SELECT * FROM kasir WHERE username = '$user' AND password = '$pass'";
         $result = mysqli_query($koneksi, $query);
 
         if (mysqli_num_rows($result) === 1) {
